@@ -4,7 +4,7 @@ import random
 import io
 
 dico_good = { "success": True , "errormessages" : "" , "execution": "OK", "feedback": "ok", "other": "" }
-dico_bad = { "success": False , "errormessages" : "création d'une exception", "execution": "", "feedback": "modifier votre valeur", "other": "" }
+dico_bad = { "success": False , "errormessages" : "", "execution": "", "feedback": "modifier votre valeur", "other": "" }
 
 student=None
 def hiddenimport():
@@ -34,8 +34,12 @@ hiddenimport()
 a=random.randint(1,20)
 b=random.randint(1,20)
 
-
-if student.binop(a,b) == a*b :
+if not 'binop' in student.__dict__:
+	dico_bad["errormessages"]= "Fonction binop non définie"
+	dico_bad["execution"]= ""
+	dico_bad["feedback"]= " veuillez écrire une fonction binop avec le mot clef def " 
+	print(json.dumps(dico_bad))
+elif student.binop(a,b) == a*b :
 	dico_good["execution"]= "la fonction binop(%s , %s ) retourne  un résultat exacte %s " % (a,b,student.binop(a,b))
 	print(json.dumps(dico_good)) 
 else:
