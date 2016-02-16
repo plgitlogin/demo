@@ -2,7 +2,7 @@
 # Copyright 2016 Dominique Revuz <dr@univ-mlv.fr>
 author=Dominique Revuz 
 title=un exemple de fonction
-texte==
+text==
 Veuiller ecrire une fonction "binop" qui retourne le produit de ces deux paramètres.
 ==
 code==
