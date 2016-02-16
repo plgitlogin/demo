@@ -25,6 +25,7 @@ def hiddenimport():
 		dico_bad["errormessages"]= str(e)
 		dico_bad["execution"]= bob.getvalue()
 		print(json.dumps(dico_bad))
+		sys.exit(1)
 
 
 hiddenimport()
