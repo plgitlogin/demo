@@ -23,7 +23,7 @@ def hiddenimport():
 	except Exception as e:
 		sys.stdout=oldstd
 		dico_bad["errormessages"]= str(e)
-		dico_bad["execution"]= bob.getValue()
+		dico_bad["execution"]= bob.getvalue()
 		print(json.dumps(dico_bad))
 
 
