@@ -24,6 +24,7 @@ def hiddenimport():
 		sys.stdout=oldstd
 		dico_bad["errormessages"]= str(e)
 		dico_bad["execution"]= bob.getvalue()
+		dico_bad["feedback"]= "Ecrivez du code syntaxiquement correct"
 		print(json.dumps(dico_bad))
 		sys.exit(1)
 
